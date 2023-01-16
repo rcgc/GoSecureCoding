@@ -1,8 +1,13 @@
 package main
 
-import "net/http"
+type User struct {
+	Login string
+}
 
-func requestUser(r *http.Request) string {
-	// FIXME:
-	return "mcduck"
+func userFromToken(token string) *User {
+	// FIXME: JWT, Oauth2 ...
+	if token == "baz00ka" {
+		return &User{"joe"}
+	}
+	return nil
 }
